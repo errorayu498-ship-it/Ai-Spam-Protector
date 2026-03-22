@@ -7,6 +7,12 @@ from link_detector import extract_links, is_allowed
 from ai_filter import check_message
 from warning_system import add_warning
 from config import CONFIG
+from commands.show_info import ShowInfo
+
+@bot.event
+async def setup_hook():
+    await bot.add_cog(ShowInfo(bot))
+
 
 load_dotenv()
 
